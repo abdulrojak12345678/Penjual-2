@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 //fungsi untuk menampilkan data
 export async function ambilDaftarPenjual() {
-  const refDokumen = collection(db, "penjual");
+  const refDokumen = collection(db, "Penjual-2");
   const kueri = query(refDokumen, orderBy("nama"));
   const cuplikanKueri = await getDocs(kueri);
 
@@ -54,7 +54,7 @@ export function formatAngka(x) {
 //fungsi untuk menambahkan data
 export async function tambahPenjual(nama, alamat, gmail, noTlpn) {
   try {
-    const dokRef = await addDoc(collection(db, 'penjual'), {
+    const dokRef = await addDoc(collection(db, 'Penjual-2'), {
       nama: nama,
       alamat: alamat,
       gmail: gmail,
@@ -67,11 +67,11 @@ export async function tambahPenjual(nama, alamat, gmail, noTlpn) {
 }
 //fungsi untuk hapus data
 export async function hapusPenjual(docId) {
-  await deleteDoc(doc(db, "penjual", docId));
+  await deleteDoc(doc(db, "Penjual-2", docId));
 }
 //fungsi untuk ubah data
 export async function ubahPenjual(docId, nama, alamat, gmail, noTlpn) {
-  await updateDoc(doc(db, "penjual", docId), {
+  await updateDoc(doc(db, "Penjual-2", docId), {
     nama: nama,
     alamat: alamat,
     gmail: gmail,
@@ -80,7 +80,7 @@ export async function ubahPenjual(docId, nama, alamat, gmail, noTlpn) {
 }
 //fungsi untuk ambil data dan untuk diubah
 export async function ambilPenjual(docId) {
-  const docRef = await doc(db, "penjual", docId);
+  const docRef = await doc(db, "Penjual-2", docId);
   const docSnap = await getDoc(docRef);
 
   return await docSnap.data();

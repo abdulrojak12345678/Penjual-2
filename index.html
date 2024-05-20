@@ -15,11 +15,11 @@
 </head>
 
 <body>
-  <h1>Daftar penjual</h1>
+  <h1>Daftar Penjual</h1>
 
 
 
-  <table class="table" id="daftar-penjual">
+  <table class="table" id="daftar-Penjual">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -39,7 +39,7 @@
   </div>
 
 <div class="d-flex justify-content-center">
-  <button onclick="location.href='forum-data-penjual.html'" style="background-color: blue; color: white; border-radius: 10px;">Tambah penjual</button>
+  <button onclick="location.href='form-penjual.html'" style="background-color: red; color: black; border-radius: 10px;">Tambah penjual</button>
 </div>
 
   <style>
@@ -75,7 +75,7 @@
     import { ambilDaftarPenjual, formatAngka, hapusPenjual } from './main.js';
 
     $(document).ready(async function() {
-      let elemenDaftar = $("#daftar-penjual > tbody");
+      let elemenDaftar = $("#daftar-Penjual > tbody");
       let daftarPenjual = await ambilDaftarPenjual();
       let nomor = 1;
 
@@ -105,7 +105,7 @@
       })
 
       $('.link-ubah').click(async function() {
-        window.location.replace('ubah-penjual.html?docId=' + $(this).attr('data'));
+        window.location.replace('ubah-Penjual.html?docId=' + $(this).attr('data'));
       })
 
       $('#loader').hide();
